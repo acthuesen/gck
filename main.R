@@ -40,6 +40,13 @@ ogttagg <- reduce(list(ogtt_wide, ogttmax), left_join, by='project_id') %>%
 
 rm(ogttmax, ogtt_wide)
 
+# ---------------- #
+# Biochemical data #
+# ---------------- #
+bc <- bc %>%
+  mutate(HbA1cpc = HbA1c/10.929+2.15,
+         HbA1cpc_3mo = HbA1c_3mo/10.929+2.15)
+
 # ------------------- #
 # Anthropometric data #
 # ------------------- #
