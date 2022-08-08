@@ -22,6 +22,7 @@ ogtt_wide <- ogtt %>%
          dpg = mean(glu_30,glu_60,glu_90,glu_120, na.rm=T),
          dpi = mean(ins_30,ins_60,ins_90,ins_120, na.rm=T),
          dpc = mean(cpep_30,cpep_60,cpep_90,cpep_120, na.rm=T),
+         homa = (fpg*(fpi/6.945))/22.5,
          glu_incr_2hr = glu_120-fpg,
          isi = 10000/sqrt(((fpg*18.018)*(fpi/6.945))*((dpg*18.018)*(dpi/6.945))),
          igi = (ins_30-fpi)/(glu_30-fpg))
